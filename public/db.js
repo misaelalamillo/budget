@@ -6,7 +6,7 @@ request.onupgradeneeded = function(event) {
   
     db = event.target.result;
     const objectStore = db.createObjectStore(["pending"], { autoIncrement: true });
-    
+    objectStore.createIndex("transactionIndex", "transaction");
 };
 
 request.onsuccess = function(event) {
