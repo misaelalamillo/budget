@@ -9,3 +9,16 @@ request.onupgradeneeded = function(event) {
     
 };
 
+request.onsuccess = function(event) {
+    db = event.target.result;
+    console.log(event);
+  
+    if (navigator.onLine) {
+      checkDatabase();
+    }
+  };
+  
+  request.onerror = function(event) {
+    console.log("something went wrong with indexedDB");
+  };
+  
