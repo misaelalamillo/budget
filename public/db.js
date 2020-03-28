@@ -5,8 +5,8 @@ const request = indexedDB.open("budget", 1);
 request.onupgradeneeded = function(event) {
   
     db = event.target.result;
-    const objectStore = db.createObjectStore(["pending"], { autoIncrement: true });
-    objectStore.createIndex("transactionIndex", "transaction");
+     objectStore = db.createObjectStore(["pending"], { autoIncrement: true });
+  
 };
 
 request.onsuccess = function(event) {
